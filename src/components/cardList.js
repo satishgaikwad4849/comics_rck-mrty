@@ -2,6 +2,7 @@ import React,{useState,useEffect}from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
+import Button from 'react-bootstrap/Button';
 import Cards from './cards';
 import _ from 'lodash'
 
@@ -107,6 +108,9 @@ const handleChange = value => {
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </Form.Control>
+      </div>
+      <div className="bg-light border">
+      <Button variant="primary" onClick={()=>setCharacterDataList(props.characterData)}>Clear</Button>
       </div>
     </Stack>
       <div className="row d-flex justify-content-center align-items-center">
