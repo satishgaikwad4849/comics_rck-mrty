@@ -13,14 +13,12 @@ const favorites=useSelector(state=>state.favorites_char)
 const [isFavorites, setFavorites] = useState(_.includes(favorites,props.character.id))
 const [show, setShow] = useState(false);
 
+const dispatch = useDispatch();
+
 const handleClose = (id) => {dispatch(REMOVE_FAVORITES(id));console.log(id);setShow(false)}
 const handleShow = () =>{ setShow(true);}
 
-
-const dispatch = useDispatch();
-
 const sendFav = (id)=>{
-
   if(isFavorites){
     handleShow()
     }else{
@@ -30,11 +28,8 @@ const sendFav = (id)=>{
   }
 
 useEffect(()=>{
-
  setFavorites(_.includes(favorites,props.character.id))
-
 },[favorites,props.character.id])
-
 
   return (
     <>
@@ -63,20 +58,18 @@ useEffect(()=>{
                 {isFavorites?"Remove From Favorites":"Add to Favorites"}
             </Button>  
           </div>  
-        
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>Are you sure you want to remove this?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={()=>handleClose(props.character.id)}>
-            {isFavorites?"Confirm Remove From Favorites":"Add to Favorites"}
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Body>Are you sure you want to remove this?</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Cancel
+                </Button>
+                <Button variant="primary" onClick={()=>handleClose(props.character.id)}>
+                  {isFavorites?"Confirm Remove From Favorites":"Add to Favorites"}
+                </Button>
+              </Modal.Footer>
+            </Modal>
         </Card.Body>
-        
       </Card>
     </>
   )

@@ -8,7 +8,6 @@ import { useDispatch,useSelector } from 'react-redux';
 import _ from 'lodash'
 
 function App() {
-
   const dispatch = useDispatch();
   const characterData=useSelector(state=>state.characters)
   const favorites=useSelector(state=>state.favorites_char)
@@ -21,9 +20,7 @@ function App() {
            dispatch(FETCH_CHARACTERS(res));
           })
    },[])
-
    const favoritesData = _.intersectionWith(characterData, favorites, (o, id) => o.id === id)
-   
   return (
     <div className="App">
       <BrowserRouter>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect}from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
@@ -89,10 +89,10 @@ const handleChange = value => {
       </div>
       <div className="bg-light border"> 
         <Form.Control as="select"  
-            value={species}
-            onChange={e => {
-              setSpecies(e.target.value);
-            }}>
+          value={species}
+          onChange={e => {
+            setSpecies(e.target.value);
+          }}>
             <option value="">Select Species</option>
             <option value="Human">Human</option>
             <option value="Alien">Alien</option>
@@ -100,14 +100,14 @@ const handleChange = value => {
         </div>
       <div className="bg-light border">
         <Form.Control as="select"  
-            value={selectedGenderOptions}
-            onChange={e => {
-              setSelectedGenderOptions(e.target.value);
-            }}>
+          value={selectedGenderOptions}
+          onChange={e => {
+            setSelectedGenderOptions(e.target.value);
+          }}>
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-          </Form.Control>
+        </Form.Control>
       </div>
       <div className="bg-light border">
       <Button variant="primary" onClick={()=>setCharacterDataList(props.characterData)}>Clear</Button>

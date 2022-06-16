@@ -4,9 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import { NavLink } from 'react-router-dom';
 
-
 const Header = () => {
-
     return (
         <>
             <Navbar bg="dark" variant="dark" style={{ height: "60px" }}>

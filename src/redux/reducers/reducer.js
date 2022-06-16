@@ -5,7 +5,6 @@ const INIT_STATE = {
     favorites_char:[],
 };
 
-
 export const favoritesReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
       case "FETCH_CHARACTERS":
@@ -13,8 +12,7 @@ export const favoritesReducer = (state = INIT_STATE, action) => {
               ...state,
               characters:action.payload
           }
-      case "ADD_FAVORITES":
-          
+      case "ADD_FAVORITES":      
     if (!state.favorites_char.map(item => item).includes(action.payload)) {
         return {
             ...state,
@@ -22,8 +20,6 @@ export const favoritesReducer = (state = INIT_STATE, action) => {
         };
     }
     return state
-
-
     case "REMOVE_FAVORITES":
           const data = state.favorites_char.filter((el)=>el!== action.payload); 
 
