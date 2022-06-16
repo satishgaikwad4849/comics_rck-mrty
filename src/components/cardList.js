@@ -118,7 +118,7 @@ const handleChange = value => {
           characterDataList !== null ? characterDataList.map((character) => {
             return (
               <>
-                  <Cards key={character.id} character={character} characterData={characterDataList} />
+                <Cards key={character.id} character={character} characterData={characterDataList} />
               </>
             )
           })
