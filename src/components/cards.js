@@ -65,7 +65,7 @@ useEffect(()=>{
                   Cancel
                 </Button>
                 <Button variant="primary" onClick={()=>handleClose(props.character.id)}>
-                  {isFavorites?"Confirm Remove From Favorites":"Add to Favorites"}
+                  {isFavorites?"Confirm":"Add to Favorites"}
                 </Button>
               </Modal.Footer>
             </Modal>
